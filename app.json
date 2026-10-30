@@ -1,0 +1,67 @@
+{
+  "name": "IamTgHelp Extractor",
+  "description": "IamTgHelp Telegram Extractor Bot (Pyrogram)",
+  "repository": "https://github.com/iamtghelp2-cell",
+  "env": {
+    "API_ID": {
+      "description": "Telegram API ID (my.telegram.org)",
+      "required": true
+    },
+    "API_HASH": {
+      "description": "Telegram API Hash (my.telegram.org)",
+      "required": true
+    },
+    "BOT_TOKEN": {
+      "description": "Bot token from @BotFather",
+      "required": true
+    },
+    "MONGO_URL": {
+      "description": "MongoDB connection string",
+      "required": true
+    },
+    "OWNER_ID": {
+      "description": "Owner Telegram user ID",
+      "value": "7951185227",
+      "required": true
+    },
+    "LOG_GROUP": {
+      "description": "Log group ID",
+      "value": "-1003506524877",
+      "required": true
+    },
+    "BRAND_USERNAME": {
+      "description": "Your Telegram username/channel (without @)",
+      "value": "iamtghelp",
+      "required": false
+    },
+    "CHANNEL_ID2": {
+      "description": "Force-subscribe channel (@username or -100 ID, 0 = off)",
+      "value": "@iamtghelp",
+      "required": false
+    },
+    "PAYMENT_QR_URL": {
+      "description": "Payment QR image URL (optional)",
+      "required": false
+    },
+    "CP_FREE_TOKEN": {
+      "description": "Classplus token for without-login flow (optional)",
+      "required": false
+    }
+  },
+  "formation": {
+    "worker": {
+      "quantity": 1,
+      "size": "standard-2x"
+    }
+  },
+  "stack": "heroku-22",
+  "addons": [],
+  "buildpacks": [
+    {
+      "url": "heroku/python"
+    },
+    {
+      "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest.git"
+    }
+  ]
+}
