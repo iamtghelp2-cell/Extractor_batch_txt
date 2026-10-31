@@ -47,7 +47,7 @@ LOG_GROUP = _int("LOG_GROUP", -1003506524877)
 CHANNEL_ID = _int("CHANNEL_ID", LOG_GROUP)
 PREMIUM_LOGS = _int("PREMIUM_LOGS", LOG_GROUP)
 
-# Force-subscribe चैनल: डिफ़ॉल्ट = @iamtghelp चैनल (बॉट को उस चैनल में admin बनाना ज़रूरी)
+# Force-subscribe चैनल (subscribers के लिए): बॉट को इस चैनल में admin बनाना ज़रूरी
 # env में CHANNEL_ID2 = -100xxxxxxxxxx या @username डाल सकते हो; 0 = बंद
 def _channel(name, default):
     value = os.environ.get(name, "").strip() or str(default)
@@ -58,7 +58,7 @@ def _channel(name, default):
     except ValueError:
         return value if value.startswith("@") else "@" + value
 
-CHANNEL_ID2 = _channel("CHANNEL_ID2", "@" + BRAND_USERNAME)
+CHANNEL_ID2 = _channel("CHANNEL_ID2", -1004410416499)
 
 # ------------------------------------------------
 #  PRIVATE MODE – सिर्फ़ OWNER + allowed यूज़र्स
